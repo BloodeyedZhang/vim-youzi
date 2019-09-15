@@ -15,6 +15,10 @@ set hlsearch
 " set noshowmode
 set encoding=utf-8
 set ts=4
+" set pyxversion=3
+
+" Python3 的可执行文件位置
+" let g:python3_host_prog = "/Users/zhangjiajun/.pyenv/shims/python3"
 
 " 一些方便的映射
 let mapleader=','
@@ -56,6 +60,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
+" if has('nvim')
+"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"else
+"  Plug 'Shougo/deoplete.nvim'
+"  Plug 'roxma/nvim-yarp'
+"  Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 command! -bang -nargs=* Ag
@@ -80,3 +96,8 @@ nmap ss <Plug>(easymotion-s2)
 let $GOPATH = $HOME."/go"
 let $PATH = $HOME."/go/bin:".$PATH
 let g:go_bin_path = $HOME."/go/bin"
+
+" deoplete
+"let g:deoplete#enable_at_startup = 1
+"set completeopt-=preview
+
